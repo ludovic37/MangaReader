@@ -6,4 +6,5 @@ package com.ludovic.crespeau.mangareader;
 
 public class Constants {
     public static final String URL = "https://doodle-manga-scraper.p.mashape.com";
+    public static final String KEY_MANGAID = "MangaId";
 }

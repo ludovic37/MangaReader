@@ -1,4 +1,4 @@
-package com.ludovic.crespeau.mangareader.view.allcard;
+package com.ludovic.crespeau.mangareader.view.allmanga;
 
 import dagger.Module;
 

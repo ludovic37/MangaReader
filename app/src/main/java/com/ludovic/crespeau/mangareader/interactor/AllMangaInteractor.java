@@ -1,6 +1,6 @@
 package com.ludovic.crespeau.mangareader.interactor;
 
-import com.ludovic.crespeau.mangareader.view.allcard.AllMangaView;
+import com.ludovic.crespeau.mangareader.view.allmanga.AllMangaView;
 
 /**
  * Created by crespeau on 02/11/2016.

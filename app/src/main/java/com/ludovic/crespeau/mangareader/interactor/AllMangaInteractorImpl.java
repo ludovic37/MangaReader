@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.ludovic.crespeau.mangareader.api.MangaApi;
 import com.ludovic.crespeau.mangareader.model.MangaList;
-import com.ludovic.crespeau.mangareader.view.allcard.AllMangaView;
+import com.ludovic.crespeau.mangareader.view.allmanga.AllMangaView;
 
 import java.util.List;
 

@@ -10,6 +10,8 @@ import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractor;
 import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
+import com.ludovic.crespeau.mangareader.interactor.MangaInteractorImpl;
 
 import dagger.Module;
 import dagger.Provides;
@@ -39,6 +41,11 @@ public class InteractorsModule {
     @Provides
     public AllMangaInteractor provideAllMangaInteractor(MangaApi aintroApi, Context appContext){
         return new AllMangaInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public MangaInteractor provideMangaInteractor(MangaApi aintroApi, Context appContext){
+        return new MangaInteractorImpl(aintroApi, appContext);
     }
 
     @Provides

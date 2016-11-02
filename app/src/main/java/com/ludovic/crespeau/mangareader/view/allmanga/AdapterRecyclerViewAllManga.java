@@ -1,4 +1,4 @@
-package com.ludovic.crespeau.mangareader.view.allcard;
+package com.ludovic.crespeau.mangareader.view.allmanga;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -25,9 +25,15 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
     private List<MangaList> mangaLists;
     private Context context;
 
+    private MyClickListener myClickListener;
+
     public AdapterRecyclerViewAllManga(Context context) {
         this.mangaLists = new ArrayList<>();
         this.context = context;
+    }
+
+    public void setOnItemClickListener(MyClickListener myClickListener) {
+        this.myClickListener = myClickListener;
     }
 
     @Override
@@ -85,7 +91,12 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
     }
 
 
-    public class DataObjectHolder extends RecyclerView.ViewHolder {
+    public interface MyClickListener {
+        void onItemClick(MangaList mangaList, View v);
+    }
+
+
+    public class DataObjectHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imageViewCover;
         TextView textViewName;
@@ -96,7 +107,13 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
             imageViewCover = (ImageView) itemView.findViewById(R.id.imageViewCover);
             textViewName = (TextView) itemView.findViewById(R.id.textViewName);
             textViewInfos = (TextView) itemView.findViewById(R.id.textViewInfos);
+            itemView.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            myClickListener.onItemClick(mangaLists.get(getAdapterPosition()), v);
         }
     }
 }

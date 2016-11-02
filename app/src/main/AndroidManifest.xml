@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.allcard.AllMangaActivity"/>
+        <activity android:name=".view.allmanga.AllMangaActivity"/>
+        <activity android:name=".view.manga.MangaActivity"/>
     </application>
 
 </manifest>

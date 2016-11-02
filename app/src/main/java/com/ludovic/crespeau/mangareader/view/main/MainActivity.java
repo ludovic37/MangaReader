@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.ludovic.crespeau.mangareader.R;
 import com.ludovic.crespeau.mangareader.component.AppComponent;
 import com.ludovic.crespeau.mangareader.component.DaggerMainComponent;
-import com.ludovic.crespeau.mangareader.view.allcard.AllMangaActivity;
+import com.ludovic.crespeau.mangareader.view.allmanga.AllMangaActivity;
 import com.ludovic.crespeau.mangareader.view.common.BaseActivity;
 
 import butterknife.ButterKnife;

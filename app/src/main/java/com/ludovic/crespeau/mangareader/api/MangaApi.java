@@ -1,5 +1,6 @@
 package com.ludovic.crespeau.mangareader.api;
 
+import com.ludovic.crespeau.mangareader.model.Manga;
 import com.ludovic.crespeau.mangareader.model.MangaList;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public interface MangaApi {
             "Accept: text/plain"
     })
     @GET("/mangareader.net/manga/{mangaid}")
-    public Call<Void> getManga(String siteid, String mangaid, int chapterid);
+    public Call<Manga> getManga(@Path("mangaid") String mangaid);
 
 
     //TODO:
