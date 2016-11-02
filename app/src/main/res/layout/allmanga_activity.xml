@@ -9,7 +9,16 @@
         android:layout_height="wrap_content"
         android:text="All Manga List"
         android:textSize="20sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:id="@+id/textView" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reciclerViewAllManga"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView">
+
+    </android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

@@ -1,15 +1,21 @@
 package com.ludovic.crespeau.mangareader.view.allcard;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.ludovic.crespeau.mangareader.R;
 import com.ludovic.crespeau.mangareader.component.AppComponent;
 import com.ludovic.crespeau.mangareader.component.DaggerAllMangaComponent;
 import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractor;
+import com.ludovic.crespeau.mangareader.model.MangaList;
 import com.ludovic.crespeau.mangareader.view.common.BaseActivity;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -18,10 +24,14 @@ import butterknife.ButterKnife;
 
 public class AllMangaActivity extends BaseActivity implements AllMangaView {
 
+    @Bind(R.id.reciclerViewAllManga)
+    RecyclerView mReclerViewAllManga;
+
     @Inject
     AllMangaInteractor allMangaInteractor;
 
-    AllMangaView nearbyView = this;
+    AllMangaView allMangaView = this;
+    private RecyclerView.Adapter mAdapter = new AdapterRecyclerViewAllManga(this);
 
 
     @Override
@@ -39,12 +49,21 @@ public class AllMangaActivity extends BaseActivity implements AllMangaView {
     }
 
     private void setUpViews() {
-        allMangaInteractor.allManga(nearbyView);
+
+        final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+
+        mReclerViewAllManga.setHasFixedSize(true);
+        mReclerViewAllManga.setLayoutManager(mLayoutManager);
+        mReclerViewAllManga.setAdapter(mAdapter);
+
+        allMangaInteractor.allManga(allMangaView);
     }
 
 
     @Override
-    public void update() {
+    public void update(List<MangaList> mangaLists) {
+
+        ((AdapterRecyclerViewAllManga) mAdapter).setData(mangaLists);
 
     }
 
