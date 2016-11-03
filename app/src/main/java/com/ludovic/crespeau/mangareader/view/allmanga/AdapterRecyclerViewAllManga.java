@@ -39,7 +39,7 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
     @Override
     public DataObjectHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_all_manga, parent, false);
+                .inflate(R.layout.item_card_all_manga, parent, false);
 
         DataObjectHolder dataObjectHolder = new DataObjectHolder(view);
         return dataObjectHolder;
@@ -50,20 +50,24 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
 
         holder.textViewName.setText(mangaLists.get(position).name);
 
-        if(mangaLists.get(position).info!= null)
+        /*if(mangaLists.get(position).info!= null)
             if (mangaLists.get(position).info.length()>=100){
                 String info = mangaLists.get(position).info.substring(0,100)+"...";
                 holder.textViewInfos.setText(info);
             }
             else{
                 holder.textViewInfos.setText(mangaLists.get(position).info);
-            }
+            }*/
 
-        Picasso.with(context)
+
+            Picasso.with(context)
                 .load(mangaLists.get(position).cover)
-                .fit()
+                .error(R.drawable.no_image_available_large)
+                //.fit()
                 //.centerCrop()
                 .into(holder.imageViewCover);
+
+
     }
 
     @Override
@@ -100,13 +104,15 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
 
         ImageView imageViewCover;
         TextView textViewName;
-        TextView textViewInfos;
+        //TextView textViewInfos;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
-            imageViewCover = (ImageView) itemView.findViewById(R.id.imageViewCover);
-            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-            textViewInfos = (TextView) itemView.findViewById(R.id.textViewInfos);
+            //imageViewCover = (ImageView) itemView.findViewById(R.id.imageViewCover);
+            imageViewCover = (ImageView) itemView.findViewById(R.id.imageViewCardCoverAllManga);
+            //textViewName = (TextView) itemView.findViewById(R.id.textViewName);
+            textViewName = (TextView) itemView.findViewById(R.id.textViewCardNameAllManga);
+            //textViewInfos = (TextView) itemView.findViewById(R.id.textViewInfos);
             itemView.setOnClickListener(this);
 
         }

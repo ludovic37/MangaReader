@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
@@ -57,9 +58,13 @@ public class AllMangaActivity extends BottomMenuActivity implements AllMangaView
 
     private void setUpViews() {
 
-        final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        //final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
 
         mReclerViewAllManga.setHasFixedSize(true);
+
+        final StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        mLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+
         mReclerViewAllManga.setLayoutManager(mLayoutManager);
         mReclerViewAllManga.setAdapter(mAdapter);
 

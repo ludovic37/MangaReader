@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textViewCardNameAllManga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="name"/>
+
+        <ImageView
+            android:id="@+id/imageViewCardCoverAllManga"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/textViewCardNameAllManga"
+            android:src="@drawable/no_image_available_large"
+            android:contentDescription="cover"/>
+
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -14,6 +14,8 @@ import com.ludovic.crespeau.mangareader.model.Manga;
 import com.ludovic.crespeau.mangareader.view.common.BaseActivity;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.Bind;
@@ -70,9 +72,25 @@ public class MangaActivity extends BaseActivity implements MangaView {
     public void update(Manga manga) {
 
         mTextViewNameManga.setText(manga.name);
-        mTextViewArtistManga.setText(manga.artist.toString());
-        mTextViewAuthorManga.setText(manga.author.toString());
-        mTextViewGenreManga.setText(manga.genres.toString());
+
+        List<String> artistList = manga.artist;
+        String artist = "Artist: ";
+        for (int i = 0; i<artistList.size() ;i++)
+            artist += artistList.get(i)+", " ;
+        mTextViewArtistManga.setText(artist);
+
+        List<String> authorList = manga.author;
+        String author="Author: ";
+        for (int i = 0; i<authorList.size() ;i++)
+            author += authorList.get(i)+", " ;
+        mTextViewAuthorManga.setText(author);
+
+        List<String> genresList = manga.genres;
+        String genres="Genres: ";
+        for (int i = 0; i<genresList.size() ;i++)
+            genres += genresList.get(i)+", " ;
+        mTextViewGenreManga.setText(genres);
+
         mTextViewInfosManga.setText(manga.info);
         mTextViewStatusManga.setText(manga.status);
         mTextViewYearManga.setText(manga.yearOfRelease+"");
