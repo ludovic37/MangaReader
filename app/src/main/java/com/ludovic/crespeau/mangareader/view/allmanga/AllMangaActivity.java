@@ -14,6 +14,7 @@ import com.ludovic.crespeau.mangareader.component.DaggerAllMangaComponent;
 import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractor;
 import com.ludovic.crespeau.mangareader.model.MangaList;
 import com.ludovic.crespeau.mangareader.view.common.BaseActivity;
+import com.ludovic.crespeau.mangareader.view.common.BottomMenuActivity;
 import com.ludovic.crespeau.mangareader.view.manga.MangaActivity;
 
 import java.util.List;
@@ -28,7 +29,7 @@ import butterknife.ButterKnife;
  * Created by crespeau on 02/11/2016.
  */
 
-public class AllMangaActivity extends BaseActivity implements AllMangaView {
+public class AllMangaActivity extends BottomMenuActivity implements AllMangaView {
 
     @Bind(R.id.reciclerViewAllManga)
     RecyclerView mReclerViewAllManga;
