@@ -17,5 +17,5 @@ public class Manga {
     public String info;
     public String cover;
     public String lastUpdate;
-    public List<Chapters> chapterses;
+    public List<Chapters> chapters;
 }

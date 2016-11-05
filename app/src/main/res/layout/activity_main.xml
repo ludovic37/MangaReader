@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context="com.ludovic.crespeau.mangareader.view.MainActivity">
+    tools:context="com.ludovic.crespeau.mangareader.view.main.MainActivity">
 
 
-    <Button
+    <TextView
+        android:id="@+id/manga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="All Manga"
-        android:id="@+id/button1" />
+        android:text="@string/manga"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/reader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reader"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:layout_below="@+id/manga"
+        android:layout_centerHorizontal="true"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="XXX"
-        android:id="@+id/button2" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="XXX"
-        android:id="@+id/button3" />
-</LinearLayout>
+        android:text="@string/start"
+        android:id="@+id/button1"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

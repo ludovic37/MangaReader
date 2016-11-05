@@ -5,5 +5,4 @@ package com.ludovic.crespeau.mangareader.view.main;
  */
 public interface MainView {
 
-    void all();
 }

@@ -5,7 +5,10 @@ import com.ludovic.crespeau.mangareader.api.AuthenticatedInterceptor;
 import com.ludovic.crespeau.mangareader.api.MangaApi;
 import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractor;
+import com.ludovic.crespeau.mangareader.interactor.ChapterInteractor;
+import com.ludovic.crespeau.mangareader.interactor.FavorisInteractor;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
+import com.ludovic.crespeau.mangareader.model.Chapter;
 import com.ludovic.crespeau.mangareader.modules.AppModule;
 import com.ludovic.crespeau.mangareader.modules.InteractorsModule;
 
@@ -31,6 +34,8 @@ public interface AppComponent {
     AuthentificationInteractor getAuthentificationInteractor();
     AllMangaInteractor getAllMangaInteractor();
     MangaInteractor getMangaInteractor();
+    FavorisInteractor getFavorisInteractor();
+    ChapterInteractor getChapterInteractor();
     //NearbyInteractor getNearbyInteractor();
     AuthenticatedInterceptor getAuthenticatedInterceptor();
 }

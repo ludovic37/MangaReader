@@ -8,7 +8,6 @@ import com.ludovic.crespeau.mangareader.view.main.MainView;
  */
 public interface AuthentificationInteractor {
 
-    void authenticate(String username, long userid, String accessToken, String accessTokenSecret, MainView mainView);
-    void notification(MainView mainView);
+
 
 }

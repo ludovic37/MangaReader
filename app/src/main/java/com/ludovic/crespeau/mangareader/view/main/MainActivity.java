@@ -1,7 +1,11 @@
 package com.ludovic.crespeau.mangareader.view.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.ludovic.crespeau.mangareader.R;
 import com.ludovic.crespeau.mangareader.component.AppComponent;
@@ -17,8 +21,19 @@ public class MainActivity extends BaseActivity implements MainView {
     MainView me = this;
 
     @OnClick(R.id.button1)
-    public void allcard(){
-        startActivity(new Intent(this, AllMangaActivity.class));
+    public void start(){
+
+        NetworkInfo network = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+
+        if (network==null || !network.isConnected()) {
+            // Le périphérique n'est pas connecté à Internet
+            Toast.makeText(MainActivity.this,"Pas de connection Internet",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            // Le périphérique est connecté à Internet
+            startActivity(new Intent(MainActivity.this, AllMangaActivity.class));
+        }
+
     }
 
     @Override
@@ -37,8 +52,18 @@ public class MainActivity extends BaseActivity implements MainView {
                 .inject(this);
     }
 
-    @Override
-    public void all() {
+    private void testNetwork(){
+        NetworkInfo network = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 
+        if (network==null || !network.isConnected()) {
+            // Le périphérique n'est pas connecté à Internet
+            Toast.makeText(MainActivity.this,"Pas de connection Internet",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            // Le périphérique est connecté à Internet
+            startActivity(new Intent(MainActivity.this, AllMangaActivity.class));
+        }
     }
+
+
 }

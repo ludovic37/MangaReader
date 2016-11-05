@@ -10,6 +10,10 @@ import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.AllMangaInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractor;
 import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.ChapterInteractor;
+import com.ludovic.crespeau.mangareader.interactor.ChapterInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.FavorisInteractor;
+import com.ludovic.crespeau.mangareader.interactor.FavorisInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractorImpl;
 
@@ -33,11 +37,6 @@ public class InteractorsModule {
         return new AuthentificationInteractorImpl(aintroApi);
     }
 
-    /*@Provides
-    public NearbyInteractor provideNearbyInteractor(MangaApi aintroApi, Context appContext){
-        return new NearbyInteractorImpl(aintroApi, appContext);
-    }*/
-
     @Provides
     public AllMangaInteractor provideAllMangaInteractor(MangaApi aintroApi, Context appContext){
         return new AllMangaInteractorImpl(aintroApi, appContext);
@@ -46,6 +45,16 @@ public class InteractorsModule {
     @Provides
     public MangaInteractor provideMangaInteractor(MangaApi aintroApi, Context appContext){
         return new MangaInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public ChapterInteractor provideChapterInteractor(MangaApi aintroApi, Context appContext){
+        return new ChapterInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public FavorisInteractor provideFavorisInteractor(MangaApi aintroApi, Context appContext){
+        return new FavorisInteractorImpl(aintroApi, appContext);
     }
 
     @Provides

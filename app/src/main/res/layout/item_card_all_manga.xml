@@ -17,8 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:text="name"/>
+            android:textSize="14sp"/>
 
         <ImageView
             android:id="@+id/imageViewCardCoverAllManga"
@@ -26,10 +25,7 @@
             android:layout_height="100dp"
             android:layout_below="@+id/textViewCardNameAllManga"
             android:src="@drawable/no_image_available_large"
-            android:contentDescription="cover"/>
-
-
-
+            android:contentDescription="@string/cover"/>
 
     </RelativeLayout>
 

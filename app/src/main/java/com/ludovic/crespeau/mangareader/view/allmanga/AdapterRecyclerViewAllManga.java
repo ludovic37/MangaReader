@@ -50,15 +50,6 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
 
         holder.textViewName.setText(mangaLists.get(position).name);
 
-        /*if(mangaLists.get(position).info!= null)
-            if (mangaLists.get(position).info.length()>=100){
-                String info = mangaLists.get(position).info.substring(0,100)+"...";
-                holder.textViewInfos.setText(info);
-            }
-            else{
-                holder.textViewInfos.setText(mangaLists.get(position).info);
-            }*/
-
 
             Picasso.with(context)
                 .load(mangaLists.get(position).cover)
@@ -66,8 +57,6 @@ public class AdapterRecyclerViewAllManga extends RecyclerView.Adapter<AdapterRec
                 //.fit()
                 //.centerCrop()
                 .into(holder.imageViewCover);
-
-
     }
 
     @Override

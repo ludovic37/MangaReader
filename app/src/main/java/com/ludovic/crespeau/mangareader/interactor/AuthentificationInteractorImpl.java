@@ -18,13 +18,5 @@ public class AuthentificationInteractorImpl implements AuthentificationInteracto
         this.mangaApi = mangaApi;
     }
 
-    @Override
-    public void authenticate(String username, long userid, String accessToken, String accessTokenSecret, final MainView mainView) {
 
-    }
-
-    @Override
-    public void notification(final MainView mainView) {
-
-    }
 }

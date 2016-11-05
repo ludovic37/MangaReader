@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.ludovic.crespeau.mangareader.R;
 import com.ludovic.crespeau.mangareader.view.allmanga.AllMangaActivity;
+import com.ludovic.crespeau.mangareader.view.favoris.FavorisActivity;
 
 import butterknife.Bind;
 import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
@@ -17,12 +18,10 @@ import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
 
 public abstract class BottomMenuActivity extends BaseActivity implements BottomNavigation.OnMenuItemSelectionListener {
 
-    //private static final String TAG = NearbyActivity.class.getSimpleName();
+
 
     @Bind(R.id.BottomNavigation)
     BottomNavigation bottomNavigation;
-
-
 
     SharedPreferences sharedPreferences;
 
@@ -40,10 +39,10 @@ public abstract class BottomMenuActivity extends BaseActivity implements BottomN
         if(this instanceof AllMangaActivity) {
             index = 0;
             editor.putInt("menu", index);
-        }/*else if(this instanceof FavorisActivity)  {
+        }else if(this instanceof FavorisActivity)  {
             index = 1;
             editor.putInt("menu", index);
-        }else if (this instanceof SearchActivity){
+        }/*else if (this instanceof SearchActivity){
             index = 2;
             editor.putInt("menu", index);
         }else if(this instanceof OptionActivity)  {
@@ -60,8 +59,7 @@ public abstract class BottomMenuActivity extends BaseActivity implements BottomN
     @Override
     public void onMenuItemSelect(final int itemId, final int position) {
         Log.i("TAG", "onMenuItemSelect(" + itemId + ", " + position + ")");
-        Log.i("AAAA", "onMenuItemSelect(" + itemId + ", " + position + ")");
-        Log.i("AAAA", "-----------------------------------");
+        Log.i("TAG", "-----------------------------------");
 
         bottomNavigation.getBadgeProvider().remove(itemId);
         Intent intent;
@@ -73,14 +71,14 @@ public abstract class BottomMenuActivity extends BaseActivity implements BottomN
                 finish();
                 break;
 
-            /*case R.id.item_favoris:
+            case R.id.item_favoris:
                 intent = new Intent(this, FavorisActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
                 break;
 
-            case R.id.item_search:
+            /*case R.id.item_search:
                 intent = new Intent(this, SearchActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
