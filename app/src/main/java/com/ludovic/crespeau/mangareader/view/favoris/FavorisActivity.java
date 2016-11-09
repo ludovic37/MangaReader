@@ -82,6 +82,8 @@ public class FavorisActivity extends BottomMenuActivity implements FavorisView {
 
         });
 
+
+
         ((AdapterRecyclerViewFavoris) mAdapter).setData(mangaIds);
 
     }

@@ -8,6 +8,8 @@ import com.ludovic.crespeau.mangareader.interactor.AuthentificationInteractor;
 import com.ludovic.crespeau.mangareader.interactor.ChapterInteractor;
 import com.ludovic.crespeau.mangareader.interactor.FavorisInteractor;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
+import com.ludovic.crespeau.mangareader.interactor.ResultatInteractor;
+import com.ludovic.crespeau.mangareader.interactor.SearchInteractor;
 import com.ludovic.crespeau.mangareader.model.Chapter;
 import com.ludovic.crespeau.mangareader.modules.AppModule;
 import com.ludovic.crespeau.mangareader.modules.InteractorsModule;
@@ -36,6 +38,7 @@ public interface AppComponent {
     MangaInteractor getMangaInteractor();
     FavorisInteractor getFavorisInteractor();
     ChapterInteractor getChapterInteractor();
-    //NearbyInteractor getNearbyInteractor();
+    ResultatInteractor getResultatInteractor();
+    SearchInteractor getSearchInteractor();
     AuthenticatedInterceptor getAuthenticatedInterceptor();
 }

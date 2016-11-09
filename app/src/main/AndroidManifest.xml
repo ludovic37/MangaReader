@@ -22,6 +22,9 @@
         <activity android:name=".view.allmanga.AllMangaActivity"/>
         <activity android:name=".view.manga.MangaActivity"/>
         <activity android:name=".view.favoris.FavorisActivity"/>
+        <activity android:name=".view.chapters.ChapterActivity"/>
+        <activity android:name=".view.search.SearchActivity"/>
+        <activity android:name=".view.resultActivity.ResultatActivity"/>
     </application>
 
 </manifest>

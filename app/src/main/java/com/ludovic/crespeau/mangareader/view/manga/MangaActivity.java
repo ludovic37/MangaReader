@@ -16,6 +16,7 @@ import com.ludovic.crespeau.mangareader.component.DaggerMangaComponent;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
 import com.ludovic.crespeau.mangareader.model.Manga;
 import com.ludovic.crespeau.mangareader.model.MangaId;
+import com.ludovic.crespeau.mangareader.view.chapters.ChapterActivity;
 import com.ludovic.crespeau.mangareader.view.common.BottomMenuActivity;
 import com.squareup.picasso.Picasso;
 
@@ -113,9 +114,9 @@ public class MangaActivity extends BottomMenuActivity implements MangaView {
         Gson gson = new Gson();
         String jsonChapter = gson.toJson(myManga.chapters);
 
-        //Intent intent = new Intent(this, ChapterActivity.class);
-        //intent.putExtra(Constants.KEY_MANGAID,jsonChapter);
-        //startActivity(intent);
+        Intent intent = new Intent(this, ChapterActivity.class);
+        intent.putExtra(Constants.KEY_CHAPTERS,jsonChapter);
+        startActivity(intent);
     }
 
     @Inject

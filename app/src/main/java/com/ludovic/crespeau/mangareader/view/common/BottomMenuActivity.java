@@ -8,6 +8,7 @@ import android.util.Log;
 import com.ludovic.crespeau.mangareader.R;
 import com.ludovic.crespeau.mangareader.view.allmanga.AllMangaActivity;
 import com.ludovic.crespeau.mangareader.view.favoris.FavorisActivity;
+import com.ludovic.crespeau.mangareader.view.search.SearchActivity;
 
 import butterknife.Bind;
 import it.sephiroth.android.library.bottomnavigation.BottomNavigation;
@@ -42,10 +43,10 @@ public abstract class BottomMenuActivity extends BaseActivity implements BottomN
         }else if(this instanceof FavorisActivity)  {
             index = 1;
             editor.putInt("menu", index);
-        }/*else if (this instanceof SearchActivity){
+        }else if (this instanceof SearchActivity){
             index = 2;
             editor.putInt("menu", index);
-        }else if(this instanceof OptionActivity)  {
+        }/*else if(this instanceof OptionActivity)  {
             index = 3;
             editor.putInt("menu", index);
         }*/
@@ -78,14 +79,14 @@ public abstract class BottomMenuActivity extends BaseActivity implements BottomN
                 finish();
                 break;
 
-            /*case R.id.item_search:
+            case R.id.item_search:
                 intent = new Intent(this, SearchActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
                 break;
 
-            case R.id.item_option:
+            /*case R.id.item_option:
                 intent = new Intent(this, OptionActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

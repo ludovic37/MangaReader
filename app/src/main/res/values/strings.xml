@@ -4,4 +4,7 @@
     <string name="start">Start</string>
     <string name="manga">Manga</string>
     <string name="reader">Reader</string>
+    <string name="title_manga">Title manga</string>
+    <string name="genres">Genres</string>
+    <string name="search">Search</string>
 </resources>

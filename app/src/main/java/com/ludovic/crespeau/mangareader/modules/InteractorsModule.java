@@ -16,6 +16,10 @@ import com.ludovic.crespeau.mangareader.interactor.FavorisInteractor;
 import com.ludovic.crespeau.mangareader.interactor.FavorisInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.ResultatInteractor;
+import com.ludovic.crespeau.mangareader.interactor.ResultatInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.SearchInteractor;
+import com.ludovic.crespeau.mangareader.interactor.SearchInteractorImpl;
 
 import dagger.Module;
 import dagger.Provides;
@@ -55,6 +59,16 @@ public class InteractorsModule {
     @Provides
     public FavorisInteractor provideFavorisInteractor(MangaApi aintroApi, Context appContext){
         return new FavorisInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public SearchInteractor provideSearchInteractor(MangaApi aintroApi, Context appContext){
+        return new SearchInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public ResultatInteractor provideResultatInteractor(MangaApi aintroApi, Context appContext){
+        return new ResultatInteractorImpl(aintroApi, appContext);
     }
 
     @Provides
