@@ -12,4 +12,5 @@ public class Constants {
     public static final String KEY_PREF = "Pref";
     public static final String KEY_CHAPTERS  = "Chapters";
     public static final String KEY_SEARCH  = "Search";
+    public static final String KEY_CHAPTER_ID  = "ChapterID";
 }

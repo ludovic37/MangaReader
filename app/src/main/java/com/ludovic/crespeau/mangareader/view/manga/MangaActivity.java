@@ -116,6 +116,7 @@ public class MangaActivity extends BottomMenuActivity implements MangaView {
 
         Intent intent = new Intent(this, ChapterActivity.class);
         intent.putExtra(Constants.KEY_CHAPTERS,jsonChapter);
+        intent.putExtra(Constants.KEY_MANGAID,mangaid);
         startActivity(intent);
     }
 

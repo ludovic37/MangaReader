@@ -25,6 +25,7 @@
         <activity android:name=".view.chapters.ChapterActivity"/>
         <activity android:name=".view.search.SearchActivity"/>
         <activity android:name=".view.resultActivity.ResultatActivity"/>
+        <activity android:name=".view.page.PageActivity"/>
     </application>
 
 </manifest>

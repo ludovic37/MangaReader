@@ -16,6 +16,8 @@ import com.ludovic.crespeau.mangareader.interactor.FavorisInteractor;
 import com.ludovic.crespeau.mangareader.interactor.FavorisInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractor;
 import com.ludovic.crespeau.mangareader.interactor.MangaInteractorImpl;
+import com.ludovic.crespeau.mangareader.interactor.PageInteractor;
+import com.ludovic.crespeau.mangareader.interactor.PageInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.ResultatInteractor;
 import com.ludovic.crespeau.mangareader.interactor.ResultatInteractorImpl;
 import com.ludovic.crespeau.mangareader.interactor.SearchInteractor;
@@ -64,6 +66,11 @@ public class InteractorsModule {
     @Provides
     public SearchInteractor provideSearchInteractor(MangaApi aintroApi, Context appContext){
         return new SearchInteractorImpl(aintroApi, appContext);
+    }
+
+    @Provides
+    public PageInteractor providePageInteractor(MangaApi aintroApi, Context appContext){
+        return new PageInteractorImpl(aintroApi, appContext);
     }
 
     @Provides

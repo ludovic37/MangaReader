@@ -2,6 +2,7 @@ package com.ludovic.crespeau.mangareader.api;
 
 import android.support.annotation.Nullable;
 
+import com.ludovic.crespeau.mangareader.model.Chapter;
 import com.ludovic.crespeau.mangareader.model.Genre;
 import com.ludovic.crespeau.mangareader.model.Manga;
 import com.ludovic.crespeau.mangareader.model.MangaList;
@@ -22,13 +23,13 @@ import retrofit2.http.Query;
 
 public interface MangaApi {
 
-    //TODO:
+
     @Headers({
             "X-Mashape-Key: SU205o60tymshQSUrnRFZN6HZvbfp1182lQjsnjdZ6UQvXfRew",
             "Accept: text/plain"
     })
     @GET("/mangareader.net/manga/{mangaid}/{chapterid}")
-    public Call<Void> getChapter(String siteid, String mangaid, int chapterid);
+    public Call<Chapter> getChapter(@Path("mangaid") String mangaid, @Path("chapterid") int chapterid);
 
 
     /**
