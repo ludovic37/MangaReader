@@ -1,4 +1,5 @@
 # MangaReader
+version 1.0
 
 MangaReader is an application Android for reading manga.
 
